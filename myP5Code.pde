@@ -1,6 +1,5 @@
 setup = function() {
     size(600, 400);
-    frameRate(10);
 };
 
 //Background Images
@@ -19,8 +18,6 @@ var d4 = round(random(1,4));
 draw = function(){
 //Scenes    
 background(210,210,210);
-
-particle
 
 //Dice    
 
