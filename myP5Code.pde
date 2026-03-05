@@ -15,21 +15,21 @@ var enemyMaxHP;
 var enemyAC;
 var enemyAttackDie;
 var enemyAttackBonus;
-boolean bossFight = false;
+bossFight = false;
 
 // Turns
-boolean playerTurn = true;
-var enemyTurnTimer = 0;
+playerTurn = true;
+enemyTurnTimer = 0;
 
 // Fights to boss
-var fightsWon = 0;
+fightsWon = 0;
 
 // Game Over
-boolean gameOver = false;
-var deathTimer = 0;
+gameOver = false;
+deathTimer = 0;
 
 // Win State
-boolean gameWon = false;
+gameWon = false;
 
 // Combat Log
 var[] combatLog = new var[6];
@@ -127,7 +127,7 @@ void drawUI() {
   }
 }
 
-void drawHealthBar(int x, int y, int w, int h, int current, int maxHP) {
+void drawHealthBar(x, y, w, h, current, maxHP) {
   float percent = constrain((float)current / maxHP, 0, 1);
 
   stroke(0);
@@ -149,15 +149,15 @@ void drawCombatLog() {
   textSize(14);
   text("Combat Log:", 30, 400);
 
-  for (int i = 0; i < combatLog.length; i++) {
+  for (i = 0; i < combatLog.length; i++) {
     if (combatLog[i] != null) {
       text(combatLog[i], 30, 420 + i * 15);
     }
   }
 }
 
-void addLog(int message) {
-  for (int i = combatLog.length - 1; i > 0; i--) {
+void addLog(message) {
+  for (i = combatLog.length - 1; i > 0; i--) {
     combatLog[i] = combatLog[i - 1];
   }
   combatLog[0] = message;
@@ -292,25 +292,25 @@ void pickEnemy() {
     enemyMaxHP = 20;
     enemyAC = 11;
     enemyAttackDie = 6;
-    enemyAttackBonus = 3;
+    enemyAttackBonus = 4;
   } else if (choice == 1) {
     enemyName = "Orc";
     enemyMaxHP = 28;
     enemyAC = 13;
     enemyAttackDie = 8;
-    enemyAttackBonus = 4;
+    enemyAttackBonus = 5;
   } else if (choice == 2) {
     enemyName = "Troll";
     enemyMaxHP = 36;
     enemyAC = 14;
     enemyAttackDie = 10;
-    enemyAttackBonus = 5;
+    enemyAttackBonus = 6;
   } else {
     enemyName = "Knight";
     enemyMaxHP = 30;
     enemyAC = 15;
     enemyAttackDie = 8;
-    enemyAttackBonus = 6;
+    enemyAttackBonus = 8;
   }
 
   enemyHP = enemyMaxHP;
